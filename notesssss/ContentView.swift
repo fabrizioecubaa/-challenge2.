@@ -24,7 +24,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("Le mie Note")
+            .navigationTitle("My Notes")
             .toolbar {
                 Button(action: addNote) {
                     Image(systemName: "plus")
@@ -66,7 +66,7 @@ struct NoteDetailView: View {
     var body: some View {
         TextEditor(text: $note.text)
             .padding()
-            .navigationTitle("Modifica nota")
+            .navigationTitle("Modify note")
             .onDisappear {
                 if let encoded = try? JSONEncoder().encode([note]) {
                     UserDefaults.standard.set(encoded, forKey: "notes")
